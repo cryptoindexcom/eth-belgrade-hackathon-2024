@@ -1,0 +1,50 @@
+{
+  "name": "@eth-belgrade-hackathon-2024/cryptoindex-smart-contracts",
+  "version": "0.1.0",
+  "description": "CryptoIndex.com Smart Contracts",
+  "private": true,
+  "author": {
+    "name": "CryptoIndex.com",
+    "email": "hi@cryptoindex.com",
+    "url": "https://cryptoindex.com"
+  },
+  "homepage": "https://github.com/cryptoindexcom/eth-belgrade-hackathon-2024#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cryptoindexcom/eth-belgrade-hackathon-2024.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cryptoindexcom/eth-belgrade-hackathon-2024/issues",
+    "email": "hi@cryptoindex.com"
+  },
+  "scripts": {
+    "clean": "rimraf ./build/ && mkdirp ./build/ && rimraf ./flatten/ && mkdirp ./flatten/",
+    "precompile": "yarn clean",
+    "compile": "truffle compile",
+    "postcompile": "yarn run flatten",
+    "predeploy-": "yarn run compile",
+    "deploy": "truffle migrate --network",
+    "verify": "truffle run verify --network",
+    "test": "truffle test",
+    "flatten": "waffle flatten"
+  },
+  "files": [
+    "contracts",
+    "build"
+  ],
+  "dependencies": {
+    "@openzeppelin/contracts": "5.0.2",
+    "@openzeppelin/contracts-upgradeable": "5.0.2"
+  },
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.21.0",
+    "@truffle/hdwallet-provider": "^2.1.15",
+    "dotenv": "^16.4.5",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^6.12.1",
+    "mkdirp": "^3.0.1",
+    "rimraf": "^5.0.7",
+    "truffle": "^5.11.5",
+    "truffle-plugin-verify": "^0.6.7"
+  }
+}
